@@ -9,93 +9,99 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #f9f9f9; /* Soft background color */
             color: #333;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
+            line-height: 1.6;
         }
         header {
-            background: #333;
-            color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #0779e4 3px solid;
+            background: #EAE7DC; /* Pastel header background */
+            color: #333;
+            padding: 20px 0;
+            text-align: center;
         }
         header h1 {
-            text-align: center;
             margin: 0;
-            padding-bottom: 10px;
         }
-        nav {
-            background: #444;
-            color: #fff;
-            text-align: center;
-            padding: 5px;
-            margin-top: 5px;
+        header p {
+            font-style: italic;
         }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 5px 20px;
-            font-size: 18px;
-        }
-        nav a:hover {
-            background: #0779e4;
-        }
-        .content {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-        .content div {
-            background: #fff;
+        section {
             padding: 20px;
-            width: 48%;
+            margin: 20px 0;
+        }
+        h2 {
+            color: #333;
+        }
+        .project {
+            background: #ffffff; /* White background for project entries */
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd; /* subtle border */
+            border-radius: 8px; /* slightly rounded corners for a modern feel */
+        }
+        .project h3 {
+            margin-top: 0;
+        }
+        .project p {
+            margin-bottom: 15px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #fff;
+            background: #E98074; /* Button color */
+            margin-right: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .button:hover {
+            background: #8E8D8A; /* Darker shade for hover */
         }
         footer {
-            background: #333;
-            color: #fff;
+            background: #EAE7DC; /* Pastel footer background */
+            color: #333;
             text-align: center;
             padding: 10px;
-            margin-top: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        @media only screen and (max-width: 600px) {
+            .container, .project {
+                width: 90%;
+                margin: auto;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Welcome to Saroj Bono's Portfolio</h1>
-        </div>
+        <h1>Welcome to Saroj Bono's Portfolio</h1>
+        <p>Delving into the depths of programming and engineering to build the future, one line of code at a time.</p>
     </header>
 
-    <nav>
-        <div class="container">
-            <a href="#">Home</a> |
-            <a href="https://github.com/bonosa/dashboard_project">Projects</a> |
-            <a href="#">Contact</a>
-        </div>
-    </nav>
+    <!-- Other sections here -->
 
-    <section class="content">
-        <div class="container">
-            <div>
-                <h2>Project 1</h2>
-                <p>Short description of your first project. Highlight what makes it special.</p>
-            </div>
-            <div>
-                <h2>Project 2</h2>
-                <p>Short description of your second project. Discuss the tools, languages, and technologies used.</p>
-            </div>
+    <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="project">
+            <h3>Dashboard Project</h3>
+            <p>A sophisticated data visualization dashboard for real-time analytics. Built with Python and D3.js.</p>
+            <a href="https://github.com/bonosa/dashboard_project" class="button">Repo</a>
+            <a href="https://example.com/dashboard_project/video" class="button">Video</a>
+            <a href="https://example.com/dashboard_project/screenshots" class="button">Screenshots</a>
         </div>
+        <!-- Repeat for other projects -->
     </section>
 
+    <!-- Footer with Contact Info -->
     <footer>
-        <div class="container">
-            © 2024 Saroj Bono. All rights reserved.
-        </div>
+        <p>Email: bonosa@comcast.net</p>
+        <p>Phone: 850-774-4595</p>
     </footer>
 </body>
 </html>
