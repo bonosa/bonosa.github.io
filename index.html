@@ -13,113 +13,53 @@
             color: #333;
             line-height: 1.6;
         }
-        /* Other styles remain unchanged */
 
-        /* Styling for alternating section backgrounds */
-        .pale-pink {
-            background-color: #FADADD; /* Pale Pink */
-        }
-        .pale-lavender {
-            background-color: #E6E6FA; /* Pale Lavender */
-        }
-        section {
-            padding: 20px;
-            margin: 20px 0;
+        /* Sidebar Styling */
+        #custom-sidebar {
+            position: fixed;
+            left: 0;
+            width: 250px;
+            height: 100vh;
+            background: #f90b0b;
+            color: #3227d3;
+            padding: 10px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.5);
         }
 
-        /* Existing styles for .project, .button, footer, etc. */
+        /* Copy Button Styling */
+        .copy-container {
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-   
-        header {
-            background: #EAE7DC; /* Pastel header background */
-            color: #333;
-            padding: 20px 0;
-            text-align: center;
+        #embedCode {
+            width: 80%;
+            height: 40px;
+            font-size: 14px;
+            padding: 5px;
         }
-        header h1 {
-            margin: 0;
-        }
-        header p {
-            font-style: italic;
-        }
-        section {
-            padding: 20px;
-            margin: 20px 0;
-        }
-        h2 {
-            color: #333;
-        }
-        .project {
-            background: #ffffff; /* White background for project entries */
-            padding: 15px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd; /* subtle border */
-            border-radius: 8px; /* slightly rounded corners for a modern feel */
-        }
-        .project h3 {
-            margin-top: 0;
-        }
-        .project p {
-            margin-bottom: 15px;
-        }
-        .button {
-            display: inline-block;
-            padding: 10px 15px;
-            font-size: 16px;
+
+        #copyButton {
+            background: #007BFF;
+            color: white;
             border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            color: #fff;
-            background: #E98074; /* Button color */
-            margin-right: 10px;
+            padding: 8px 12px;
+            font-size: 14px;
             cursor: pointer;
             transition: background 0.3s ease;
-        }
-        .button:hover {
-            background: #8E8D8A; /* Darker shade for hover */
-        }
-        footer {
-            background: #EAE7DC; /* Pastel footer background */
-            color: #333;
-            text-align: center;
-            padding: 10px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-        @media only screen and (max-width: 600px) {
-            .container, .project {
-                width: 90%;
-                margin: auto;
-            }
-        }
-         /* Adding styles for the navigation bar */
-        nav {
-            background-color: #EAE7DC; /* Matching the pastel theme */
-            overflow: hidden;
-        }
-        nav a {
-            float: left;
-            display: block;
-            color: #333;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-        nav a:hover {
-            background-color: #ddd;
-            color: black;
+            border-radius: 5px;
         }
 
-        /* Clear floats after the columns */
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
+        #copyButton:hover {
+            background: #0056b3;
         }
+
     </style>
 </head>
 <body>
+
     <nav>
         <a href="#home">Home</a>
         <a href="projects.html">Projects</a>
@@ -130,51 +70,60 @@
         <h1>Welcome to Saroj Bono's Portfolio</h1>
         <p>Delving into the depths of programming and engineering to build the future, one line of code at a time.</p>
     </header>
-    </style>
-</head>
-<body>
-    
-    <section id="about" class="pale-pink">
-        <h2>About Me</h2>
-        <p>Hi, I'm Saroj Bono, a seasoned software engineer with expertise in C++, Python, JavaScript and data visualization. Currently I'm building GPT4 ChatBots for businesses.</p>
-    </section>
 
-    <section id="tech-stack" class="pale-lavender">
-        <h2>Tech Stack</h2>
-        <h3>Languages</h3>
-        <p>C++, Python, JavaScript, HTML, CSS</p>
-        <h3>Frameworks</h3>
-        <p>React, Django, Flask, Node.js</p>
-        <h3>Skills</h3>
-        <p>Machine Learning, Data Mining, Data Visualization, Web Scraping, APIs, GPT4</p>
-        <h3>Tools and Platforms</h3>
-        <p>Git, Docker</p>
-    </section>
+    <section id="sidebar-demo">
+        <h2>Sidebar Demo</h2>
+        <p>Below is the embed code for adding the sidebar to any website.</p>
 
-    <section id="experience">
-        <h2>Professional Experience</h2>
-        <ul>
-            <li>Senior Software Developer at TechCorp (2010-2015)</li>
-            <li>Lead Data Analyst at DataWiz (2016-Present)</li>
-        </ul>
-    </section>
-
-    <section id="projects">
-        <h2>Featured Projects</h2>
-        <div class="project">
-            <h3>Dashboard Project</h3>
-            <p>A sophisticated data visualization dashboard for real-time analytics. Built with Python and Node.js.</p>
-            <a href="https://github.com/bonosa/dashboard_project" class="button">Repo</a>
-            <a href="https://example.com/dashboard_project/video" class="button">Video</a>
-            <a href="https://example.com/dashboard_project/screenshots" class="button">Screenshots</a>
+        <div class="copy-container">
+            <textarea id="embedCode" readonly>
+<script src="https://bonosa.github.io/sidebar/js/sidebar.js"></script>
+<script>
+window.sidebarConfig = {
+    bgColor: "#f90b0b",
+    textColor: "#3227d3",
+    position: "left"
+};
+</script>
+            </textarea>
+            <button id="copyButton">📋 Copy</button>
         </div>
-        <!-- Repeat for other projects -->
     </section>
 
     <footer>
         <p>Email: bonosa@comcast.net</p>
         <p>Phone: 850-774-4595</p>
     </footer>
+
     <script async data-id="1722646477" id="chatling-embed-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
+
+    <!-- Sidebar Embed Code -->
+    <script src="https://bonosa.github.io/sidebar/js/sidebar.js"></script>
+    <script>
+    window.sidebarConfig = {
+        bgColor: "#f90b0b",
+        textColor: "#3227d3",
+        position: "left"
+    };
+    </script>
+
+    <!-- Copy Button Functionality -->
+    <script>
+        document.getElementById("copyButton").addEventListener("click", function() {
+            let embedCode = document.getElementById("embedCode");
+            embedCode.select();
+            document.execCommand("copy");
+
+            let button = document.getElementById("copyButton");
+            button.textContent = "✔ Copied!";
+            button.style.background = "#28a745"; // Green color
+
+            setTimeout(() => {
+                button.textContent = "📋 Copy";
+                button.style.background = "#007BFF"; // Revert to original color
+            }, 2000);
+        });
+    </script>
+
 </body>
 </html>
