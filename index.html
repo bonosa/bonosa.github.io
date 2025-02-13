@@ -1,144 +1,135 @@
-(function() {
-    let config = window.sidebarConfig || { 
-        bgColor: "#333", 
-        textColor: "#fff", 
-        position: "left" 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saroj Bono's Portfolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        nav {
+            background: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        h1 {
+            color: #222;
+            text-align: center;
+        }
+
+        .copy-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        #embedCode {
+            width: 80%;
+            height: 50px;
+            font-size: 14px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            background: #fff;
+        }
+
+        #copyButton {
+            background: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            border-radius: 5px;
+        }
+
+        #copyButton:hover {
+            background: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="mailto:bonosa@comcast.net">Contact</a>
+    </nav>
+
+    <header id="home">
+        <h1>Welcome to Saroj Bono's Portfolio</h1>
+        <p>Building the future, one line of code at a time.</p>
+    </header>
+
+    <section id="sidebar-demo">
+        <h2>Sidebar Demo</h2>
+        <p>Below is the embed code for adding the sidebar to any website.</p>
+
+        <div class="copy-container">
+            <textarea id="embedCode" readonly>
+<script src="https://bonosa.github.io/sidebar/js/sidebar.js"></script>
+<script>
+window.sidebarConfig = {
+    bgColor: "#f90b0b",
+    textColor: "#3227d3",
+    position: "left"
+};
+</script>
+            </textarea>
+            <button id="copyButton">📋 Copy</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>Email: bonosa@comcast.net</p>
+        <p>Phone: 850-774-4595</p>
+    </footer>
+
+    <script async data-id="1722646477" id="chatling-embed-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
+
+    <!-- Sidebar Embed Code -->
+    <script src="https://bonosa.github.io/sidebar/js/sidebar.js"></script>
+    <script>
+    window.sidebarConfig = {
+        bgColor: "#f90b0b",
+        textColor: "#3227d3",
+        position: "left"
     };
+    </script>
 
-    let sidebar = document.createElement("div");
-    sidebar.id = "custom-sidebar";
-    sidebar.style.position = "fixed";
-    sidebar.style[config.position] = "-250px"; /* Start hidden */
-    sidebar.style.top = "0";
-    sidebar.style.width = "250px";
-    sidebar.style.height = "100vh";
-    sidebar.style.background = config.bgColor;
-    sidebar.style.color = config.textColor;
-    sidebar.style.padding = "15px";
-    sidebar.style.boxShadow = "2px 0 5px rgba(0,0,0,0.5)";
-    sidebar.style.transition = "transform 0.3s ease-in-out";
-    sidebar.style.transform = "translateX(0)";
-    sidebar.style.zIndex = "1000";
-    sidebar.style.fontFamily = "Arial, sans-serif";
+    <!-- Copy Button JavaScript -->
+    <script>
+        document.getElementById("copyButton").addEventListener("click", function() {
+            let embedCode = document.getElementById("embedCode");
+            embedCode.select();
+            document.execCommand("copy");
 
-    // Sidebar Content (Menu)
-    sidebar.innerHTML = `
-        <button id="toggleSidebar" style="
-            position: absolute; 
-            top: 10px; 
-            right: 10px; 
-            background: transparent; 
-            border: none; 
-            font-size: 24px; 
-            color: ${config.textColor}; 
-            cursor: pointer;">✖</button>
-        <h2 style="margin-bottom: 20px;">📂 Menu</h2>
-        <ul style="list-style: none; padding: 0;">
-            <li><a href="index.html#home" style="color: ${config.textColor}; text-decoration: none; display: block; padding: 10px;">🏠 Home</a></li>
-            <li><a href="projects.html" style="color: ${config.textColor}; text-decoration: none; display: block; padding: 10px;">💡 Projects</a></li>
-            <li><a href="mailto:bonosa@comcast.net" style="color: ${config.textColor}; text-decoration: none; display: block; padding: 10px;">📬 Contact</a></li>
-        </ul>
-    `;
+            let button = document.getElementById("copyButton");
+            button.textContent = "✔ Copied!";
+            button.style.background = "#28a745"; // Green color
 
-    document.body.appendChild(sidebar);
+            setTimeout(() => {
+                button.textContent = "📋 Copy";
+                button.style.background = "#007BFF"; // Revert to original color
+            }, 2000);
+        });
+    </script>
 
-    // Toggle Button
-    let toggleButton = document.createElement("button");
-    toggleButton.id = "openSidebar";
-    toggleButton.innerText = "☰ Open Menu";
-    toggleButton.style.position = "fixed";
-    toggleButton.style.top = "20px";
-    toggleButton.style[config.position] = "10px";
-    toggleButton.style.padding = "10px";
-    toggleButton.style.background = config.bgColor;
-    toggleButton.style.color = config.textColor;
-    toggleButton.style.border = "none";
-    toggleButton.style.cursor = "pointer";
-    toggleButton.style.zIndex = "999";
-    toggleButton.style.fontSize = "16px";
-
-    document.body.appendChild(toggleButton);
-
-    // Open Sidebar Function
-    toggleButton.addEventListener("click", function() {
-        sidebar.style[config.position] = "0";
-    });
-
-    // Close Sidebar Function
-    document.getElementById("toggleSidebar").addEventListener("click", function() {
-        sidebar.style[config.position] = "-250px";
-    });
-
-})();
-(function() {
-    let config = window.sidebarConfig || { 
-        bgColor: "#333", 
-        textColor: "#fff", 
-        position: "left" 
-    };
-
-    let sidebar = document.createElement("div");
-    sidebar.id = "custom-sidebar";
-    sidebar.style.position = "fixed";
-    sidebar.style[config.position] = "-250px"; /* Start hidden */
-    sidebar.style.top = "0";
-    sidebar.style.width = "250px";
-    sidebar.style.height = "100vh";
-    sidebar.style.background = config.bgColor;
-    sidebar.style.color = config.textColor;
-    sidebar.style.padding = "15px";
-    sidebar.style.boxShadow = "2px 0 5px rgba(0,0,0,0.5)";
-    sidebar.style.transition = "transform 0.3s ease-in-out";
-    sidebar.style.transform = "translateX(0)";
-    sidebar.style.zIndex = "1000";
-    sidebar.style.fontFamily = "Arial, sans-serif";
-
-    // Sidebar Content (Menu)
-    sidebar.innerHTML = `
-        <button id="toggleSidebar" style="
-            position: absolute; 
-            top: 10px; 
-            right: 10px; 
-            background: transparent; 
-            border: none; 
-            font-size: 24px; 
-            color: ${config.textColor}; 
-            cursor: pointer;">✖</button>
-        <h2 style="margin-bottom: 20px;">📂 Menu</h2>
-        <ul style="list-style: none; padding: 0;">
-            <li><a href="index.html#home" style="color: ${config.textColor}; text-decoration: none; display: block; padding: 10px;">🏠 Home</a></li>
-            <li><a href="projects.html" style="color: ${config.textColor}; text-decoration: none; display: block; padding: 10px;">💡 Projects</a></li>
-            <li><a href="mailto:bonosa@comcast.net" style="color: ${config.textColor}; text-decoration: none; display: block; padding: 10px;">📬 Contact</a></li>
-        </ul>
-    `;
-
-    document.body.appendChild(sidebar);
-
-    // Toggle Button
-    let toggleButton = document.createElement("button");
-    toggleButton.id = "openSidebar";
-    toggleButton.innerText = "☰ Open Menu";
-    toggleButton.style.position = "fixed";
-    toggleButton.style.top = "20px";
-    toggleButton.style[config.position] = "10px";
-    toggleButton.style.padding = "10px";
-    toggleButton.style.background = config.bgColor;
-    toggleButton.style.color = config.textColor;
-    toggleButton.style.border = "none";
-    toggleButton.style.cursor = "pointer";
-    toggleButton.style.zIndex = "999";
-    toggleButton.style.fontSize = "16px";
-
-    document.body.appendChild(toggleButton);
-
-    // Open Sidebar Function
-    toggleButton.addEventListener("click", function() {
-        sidebar.style[config.position] = "0";
-    });
-
-    // Close Sidebar Function
-    document.getElementById("toggleSidebar").addEventListener("click", function() {
-        sidebar.style[config.position] = "-250px";
-    });
-
-})();
+</body>
+</html>
