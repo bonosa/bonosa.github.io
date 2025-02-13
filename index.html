@@ -13,65 +13,28 @@
             color: #333;
         }
 
+        nav {
+            background: #333;
+            padding: 10px;
+            text-align: center;
+        }
 
-    nav {
-        background: #333;
-        padding: 10px;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-    }
-    
-    nav a {
-        color: white;
-        text-decoration: none;
-        font-size: 18px;
-        font-weight: bold;
-        padding: 10px 15px;
-        transition: color 0.3s ease-in-out;
-    }
-    
-    nav a:hover {
-        color: #d9eafd;s
-    }
-    
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        #home {
+            background-color: #d9eafd; /* Soft Blue for Welcome Banner */
+            padding: 50px;
+            text-align: center;
+        }
 
         h1 {
             color: #222;
         }
-
-        .copy-container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        #embedCode {
-            width: 80%;
-            height: 50px;
-            font-size: 14px;
-            padding: 5px;
-            border: 1px solid #ddd;
-            background: #fff;
-        }
-
-        #copyButton {
-            background: #007BFF;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            font-size: 14px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            border-radius: 5px;
-        }
-
-        #copyButton:hover {
-            background: #0056b3;
-        }
-
     </style>
 </head>
 <body>
@@ -79,7 +42,7 @@
     <nav>
         <a href="index.html#home">Home</a>
         <a href="projects.html">Projects</a>
-        <a href="sidebar/dashboard.html">🛠️ Customize Sidebar</a>
+        <a href="dashboard.html">🛠️ Customize Sidebar</a>
         <a href="mailto:bonosa@comcast.net">Contact</a>
     </nav>
 
@@ -88,32 +51,12 @@
         <p>Building the future, one line of code at a time.</p>
     </header>
 
-    <section id="sidebar-demo">
-        <h2>Sidebar Demo</h2>
-        <p>Below is the embed code for adding the sidebar to any website.</p>
-
-        <div class="copy-container">
-            <textarea id="embedCode" readonly>
-<script src="https://bonosa.github.io/sidebar/js/sidebar.js"></script>
-                <script src="https://bonosa.github.io/sidebar/js/sidebar.js?v=2"></script>
-
-<script>
-window.sidebarConfig = {
-    bgColor: "#d9eafd",
-    textColor: "#3227d3",
-    position: "left"
-};
-</script>
-            </textarea>
-            <button id="copyButton">📋 Copy</button>
-        </div>
-    </section>
-
     <footer>
         <p>Email: bonosa@comcast.net</p>
         <p>Phone: 850-774-4595</p>
     </footer>
 
+    <!-- 🚀 Sidebar Script -->
     <script src="https://bonosa.github.io/sidebar/js/sidebar.js"></script>
 
 </body>
