@@ -17,6 +17,11 @@
             background: #333;
             padding: 10px;
             text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
         }
 
         nav a {
@@ -30,14 +35,31 @@
             background-color: #d9eafd; /* Soft Blue for Welcome Banner */
             padding: 50px;
             text-align: center;
+            margin-top: 50px; /* Adjusted for fixed nav */
         }
 
         h1 {
             color: #222;
         }
+
+        /* Ensure hamburger menu stays visible on all pages */
+        #openSidebar {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            padding: 10px;
+            background: transparent;
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+            font-size: 24px;
+        }
     </style>
 </head>
 <body>
+
+    <button id="openSidebar">☰</button>
 
     <nav>
         <a href="index.html#home">Home</a>
@@ -58,6 +80,5 @@
 
     <!-- 🚀 Sidebar Script -->
     <script src="https://bonosa.github.io/sidebar/js/sidebar.js"></script>
-
 </body>
 </html>
