@@ -2,37 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Saroj Bono's Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saroj Bono - Portfolio</title>
     <style>
+        /* White burger menu positioning */
         #openSidebar {
             color: white !important;
             top: 70px !important;
-            left: 20px !important;
+            left: 25px !important;
+            z-index: 1001;
         }
-        header {
-            background: #1a365d;
+        .portfolio-header {
+            background: #1a759f;
             color: white;
-            padding: 100px 20px;
+            padding: 120px 20px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="portfolio-header" id="home">
         <h1>Saroj Bono</h1>
         <p>Full Stack Developer</p>
-    </header>
+    </div>
 
-    <script src="js/sidebar.js"></script>
+    <!-- Shared Sidebar -->
+    <script src="https://cdn.jsdelivr.net/gh/bonosa/sidebar@main/js/sidebar.js"></script>
+    
+    <!-- Portfolio config -->
     <script>
     window.sidebarConfig = {
-        bgColor: "#2d3748",
+        bgColor: "#184e77",
         textColor: "#ffffff",
         position: "left",
         menuItems: [
-            {text: "🎓 Portfolio", href: "#portfolio"},
+            {text: "🏠 Home", href: "#home"},
             {text: "🚀 Projects", href: "#projects"},
             {text: "📞 Contact", href: "#contact"},
-            {text: "⚙ Settings", href: "dashboard.html"}
+            {text: "🛠 Tools", href: "dashboard.html"}
         ]
     };
     </script>
