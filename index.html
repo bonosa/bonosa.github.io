@@ -5,18 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saroj Bono - Portfolio</title>
     <style>
-        /* White burger menu positioning */
-        #openSidebar {
+        /* Critical CSS Fixes */
+        #sidebar-burger {
             color: white !important;
-            top: 70px !important;
-            left: 25px !important;
-            z-index: 1001;
+            top: 40px !important;
+            left: 30px !important;
         }
-        .portfolio-header {
-            background: #1a759f;
-            color: white;
-            padding: 120px 20px;
-            text-align: center;
+
+        #custom-sidebar {
+            z-index: 10000 !important;
+        }
+
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 9999;
+            background: #1a365d;
+            padding: 15px;
+        }
+
+        .portfolio-section {
+            padding: 100px 20px;
+            min-height: 100vh;
         }
     </style>
 </head>
@@ -27,25 +38,22 @@
         <a href="#contact">Contact</a>
     </nav>
 
-    <div class="portfolio-header" id="home">
+    <section id="home" class="portfolio-section" style="background: #1e3a8a;">
         <h1>Saroj Bono</h1>
         <p>Full Stack Developer</p>
-    </div>
+    </section>
 
-    <!-- Shared Sidebar -->
-    <script src="https://cdn.jsdelivr.net/gh/bonosa/sidebar@main/js/sidebar.js"></script>
-    
-    <!-- Portfolio config -->
+    <script src="https://bonosa.github.io/sidebar/js/sidebar.js"></script>
     <script>
     window.sidebarConfig = {
-        bgColor: "#184e77",
+        bgColor: "#1e3a8a",
         textColor: "#ffffff",
         position: "left",
         menuItems: [
             {text: "🏠 Home", href: "#home"},
             {text: "🚀 Projects", href: "#projects"},
             {text: "📞 Contact", href: "#contact"},
-            {text: "🛠 Tools", href: "dashboard.html"}
+            {text: "⚙ Dashboard", href: "dashboard.html"}
         ]
     };
     </script>
