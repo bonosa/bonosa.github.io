@@ -5,44 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saroj Bono - Portfolio</title>
     <style>
-        /* Critical CSS Fixes */
         #sidebar-burger {
             color: white !important;
-            top: 40px !important;
+            top: 30px !important;
             left: 30px !important;
         }
-
-        #custom-sidebar {
-            z-index: 10000 !important;
-        }
-
-        nav {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 9999;
-            background: #1a365d;
-            padding: 15px;
-        }
-
-        .portfolio-section {
-            padding: 100px 20px;
-            min-height: 100vh;
-        }
+        #home { background: #1e3a8a; color: white; }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <section id="home" class="portfolio-section" style="background: #1e3a8a;">
+    <section id="home">
         <h1>Saroj Bono</h1>
         <p>Full Stack Developer</p>
     </section>
 
+    <!-- Updated CDN Link -->
     <script src="https://bonosa.github.io/sidebar/js/sidebar.js"></script>
     <script>
     window.sidebarConfig = {
@@ -50,10 +27,12 @@
         textColor: "#ffffff",
         position: "left",
         menuItems: [
-            {text: "🏠 Home", href: "#home"},
-            {text: "🚀 Projects", href: "#projects"},
-            {text: "📞 Contact", href: "#contact"},
-            {text: "⚙ Dashboard", href: "dashboard.html"}
+            { text: "🏠 Home", href: "#home" },
+            { text: "🚀 Projects", href: "#projects" },
+            { 
+                text: "⚙ Configure", 
+                href: "https://bonosa.github.io/sidebar/dashboard.html"
+            }
         ]
     };
     </script>
