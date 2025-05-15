@@ -154,7 +154,7 @@
         subscribeButtons.forEach(button => {
             button.addEventListener('click', async () => {
                 try {
-                    const response = await fetch('https://your-backend.onrender.com/create-checkout-session', {
+                    const response = await fetch('https://voice-agent-pro-backend.onrender.com/create-checkout-session', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ priceId: 'price_1ROnM8F5v0vfsELtKVfqxRqq' })
