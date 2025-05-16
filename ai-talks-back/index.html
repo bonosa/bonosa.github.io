@@ -61,8 +61,8 @@
         <div class="container">
             <img src="images/hero-characters.png" alt="Character Cast" class="img-fluid mb-3" style="max-width: 400px;">
             <h1>AI Talks Back</h1>
-            <p class="lead">Summarize anything in the voice of Grandma GG, Tech Wizard, Sassy Teen, and more! Try it free for 3 days, then just $10.99/year.</p>
-            <button class="cta-button" id="subscribe-button">Start Free Trial</button>
+            <p class="lead">Summarize anything in the voice of Grandma GG, Tech Wizard, Sassy Teen, and more! Just $10.99/year.</p>
+            <button class="cta-button" id="subscribe-button">Subscribe Now</button>
             <div class="secure-checkout">
                 <img src="images/stripe-secure.png" alt="Stripe Secure" style="width: 40px;">
                 <img src="images/ssl-secure.png" alt="SSL Secure" style="width: 40px;">
@@ -71,13 +71,15 @@
         </div>
     </section>
     <!-- Demo Section -->
+    <!-- Ad Section -->
     <section class="py-5 text-center">
         <div class="container">
-            <h2>Watch Our Demo</h2>
-            <video width="320" height="240" controls>
+            <h2>See Our Ad</h2>
+            <video width="320" height="240" controls autoplay muted>
                 <source src="resources/media/demo.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
+            <p>A quick look at how AI Talks Back brings summaries to life with fun character voices!</p>
         </div>
     </section>
     <!-- Features Section -->
@@ -103,13 +105,12 @@
                     <div class="feature-card">
                         <img src="images/stripe-icon.png" alt="Stripe Icon" class="mb-3" style="width: 60px;">
                         <h4>Secure & Affordable</h4>
-                        <p>3-day free trial, then $10.99/year with secure Stripe payments.</p>
+                        <p>$10.99/year with secure Stripe payments.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Testimonial Section -->
     <section class="testimonial-section">
         <div class="container">
@@ -123,13 +124,12 @@
             </div>
         </div>
     </section>
-
     <!-- Checkout Section -->
     <section id="checkout" class="py-5 text-center">
         <div class="container">
             <h2>Join the Fun!</h2>
-            <p>Try unlimited summaries in your favorite character voices free for 3 days, then $10.99/year.</p>
-            <button class="cta-button" id="subscribe-button-footer">Start Free Trial</button>
+            <p>Unlimited summaries in your favorite character voices for $10.99/year.</p>
+            <button class="cta-button" id="subscribe-button-footer">Subscribe Now</button>
             <div class="secure-checkout mt-3">
                 <img src="images/stripe-secure.png" alt="Stripe Secure" style="width: 40px;">
                 <img src="images/ssl-secure.png" alt="SSL Secure" style="width: 40px;">
@@ -137,7 +137,6 @@
             </div>
         </div>
     </section>
-
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -148,7 +147,7 @@
     <!-- Stripe Integration -->
     <script src="https://js.stripe.com/v3/"></script>
     <script>
-        const stripe = Stripe('pk_live_51RNkpJF5v0vfsELtOmoTxUe6KLKAFeswNtJbDwkcjbJq8BnUfKVHpBy58k40cMZ8f3H0SCbqWPdxLsdmVpHkmZwE00m6AeZJI4'); // Replace with your Stripe publishable key
+        const stripe = Stripe('pk_live_51RNkpJF5v0vfsELtOmoTxUe6KLKAFeswNtJbDwkcjbJq8BnUfKVHpBy58k40cMZ8f3H0SCbqWPdxLsdmVpHkmZwE00m6AeZJI4');
 
         const subscribeButtons = document.querySelectorAll('#subscribe-button, #subscribe-button-footer');
         subscribeButtons.forEach(button => {
@@ -162,8 +161,7 @@
                     const { sessionId } = await response.json();
                     await stripe.redirectToCheckout({ sessionId });
                 } catch (error) {
-                    console.error('Error:', error);
-                    alert('Something went wrong. Please try again.');
+                    alert('Error: ' + error.message);
                 }
             });
         });
